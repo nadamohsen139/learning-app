@@ -1,5 +1,6 @@
 import { View, Text, Modal, ScrollView, Image } from "react-native";
 import React from "react";
+import { Ionicons } from "@expo/vector-icons";
 
 const FriendModal = ({ visible, onClose, item }) => {
   return (
@@ -79,6 +80,30 @@ const FriendModal = ({ visible, onClose, item }) => {
             </View>
           </View>
           <Text className="text-white font-bold text-2xl">Achievements</Text>
+          <View className="flex flex-row justify-center items-center gap-x-3">
+            <View className="flex items-center gap-y-3">
+              <View className="bg-gray-700 rounded-lg p-5 ">
+                <Ionicons name="trophy-sharp" size={40} color="white" />
+              </View>
+              <Text className="text-white font-semibold text-lg">Champion</Text>
+            </View>
+            <View className="flex items-center gap-y-3">
+              <View className="bg-gray-700 rounded-lg p-5 ">
+                <Ionicons name="medal-sharp" size={40} color="white" />
+              </View>
+              <Text className="text-white font-semibold text-lg">
+                Medal Holder
+              </Text>
+            </View>
+            <View className="flex items-center gap-y-3">
+              <View className="bg-gray-700 rounded-lg p-5 ">
+                <Ionicons name="ribbon-sharp" size={40} color="white" />
+              </View>
+              <Text className="text-white font-semibold text-lg">
+                Succesful
+              </Text>
+            </View>
+          </View>
         </View>
       </ScrollView>
     </Modal>

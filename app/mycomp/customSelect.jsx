@@ -78,7 +78,7 @@ const CustomSelect = () => {
 
 const styles = StyleSheet.create({
   selectButton: {
-    backgroundColor: "#1e2030",
+    backgroundColor: "black",
     padding: 10,
     borderRadius: 5,
   },
@@ -93,11 +93,13 @@ const styles = StyleSheet.create({
     backgroundColor: "rgba(0, 0, 0, 0.5)",
   },
   modalContent: {
-    backgroundColor: "#1e2030",
+    backgroundColor: "black",
     borderRadius: 10,
     padding: 20,
     width: "80%",
     maxHeight: "80%",
+    borderWidth: 2,
+    borderColor: "gray",
   },
   option: {
     padding: 15,
