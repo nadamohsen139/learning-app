@@ -2,8 +2,10 @@ import { View, Text, TouchableOpacity } from "react-native";
 import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Ionicons } from "@expo/vector-icons";
+import { useRouter } from "expo-router";
 
 const Practice = () => {
+  const router = useRouter();
   return (
     <SafeAreaView className="bg-black flex-1 p-5 flex gap-y-3">
       <Text className="text-white font-semibold text-2xl">Practice Zone</Text>
@@ -11,7 +13,10 @@ const Practice = () => {
         Where do you want to practice today?
       </Text>
       <View className="flex justify-center items-center gap-y-12">
-        <TouchableOpacity className="flex flex-row justify-center items-center gap-x-3 bg-gray-700 rounded-lg p-7">
+        <TouchableOpacity
+          className="flex flex-row justify-center items-center gap-x-3 bg-gray-700 rounded-lg p-7"
+          onPress={() => router.push("/mycomp/Translate")}
+        >
           <Text className="text-white font-semibold text-xl">Translate</Text>
           <Ionicons name="language" size={40} color="white" />
         </TouchableOpacity>
