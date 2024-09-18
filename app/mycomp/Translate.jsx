@@ -1,6 +1,7 @@
-import { View, Text, TouchableOpacity } from "react-native";
+import { View, Text, TouchableOpacity, Modal } from "react-native";
 import React, { useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { Ionicons } from "@expo/vector-icons";
 
 const Translate = () => {
   const words = [
@@ -20,6 +21,9 @@ const Translate = () => {
   const [selectionBox, setSelectionBox] = useState(words);
 
   const [answerBox, setAnswerBox] = useState([]);
+  const [modalVisible, setModalVisible] = useState(false);
+  const [isCorrect, setIsCorrect] = useState(false);
+  const [userAnswer, setUserAnswer] = useState("");
 
   const handleWordPress = (wordObj) => {
     const { id } = wordObj;
@@ -55,13 +59,15 @@ const Translate = () => {
       .join(" ")
       .trim()
       .toLowerCase();
-    const formattedCorrectAnswer = correctAnswer.trim().toLowerCase();
 
-    if (answerBoxString === formattedCorrectAnswer) {
-      console.log("Correct answer!");
+    setUserAnswer(answerBoxString);
+
+    if (answerBoxString.toLowerCase() === correctAnswer.toLowerCase()) {
+      setIsCorrect(true);
     } else {
-      console.log("Incorrect answer");
+      setIsCorrect(false);
     }
+    setModalVisible(true);
   };
 
   return (
@@ -110,6 +116,48 @@ const Translate = () => {
       >
         <Text className="font-semibold text-white text-lg">Check it</Text>
       </TouchableOpacity>
+
+      <Modal
+        animationType="slide"
+        transparent={true}
+        visible={modalVisible}
+        onRequestClose={() => {
+          setModalVisible(false);
+        }}
+      >
+        <View className="absolute top-[30%] w-full p-10 rounded-2xl bg-black">
+          <View className="flex gap-y-5 items-center justify-center pt-5">
+            {isCorrect ? (
+              <>
+                <View className="rounded-full bg-green-500 p-2 absolute -top-16 border-8 border-black">
+                  <Ionicons name="checkmark-sharp" size={40} color="white" />
+                </View>
+                <Text className="text-white text-xl font-bold text-center">
+                  You are correct!
+                </Text>
+                <Text className="text-white text-xl font-bold text-center">
+                  {correctAnswer}
+                </Text>
+              </>
+            ) : (
+              <>
+                <View className="rounded-full bg-red-500 p-2 absolute -top-16 border-8 border-black">
+                  <Ionicons name="close-sharp" size={40} color="white" />
+                </View>
+                <Text className="text-white text-xl font-bold text-center">
+                  You were close!
+                </Text>
+                <Text className="text-white text-lg font-bold text-center">
+                  Correct Answer is : {correctAnswer}
+                </Text>
+                <Text className="text-white text-lg font-bold text-center">
+                  Your Answer : {userAnswer}
+                </Text>
+              </>
+            )}
+          </View>
+        </View>
+      </Modal>
     </SafeAreaView>
   );
 };
