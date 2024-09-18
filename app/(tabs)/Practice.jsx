@@ -20,11 +20,17 @@ const Practice = () => {
           <Text className="text-white font-semibold text-xl">Translate</Text>
           <Ionicons name="language" size={40} color="white" />
         </TouchableOpacity>
-        <TouchableOpacity className="flex flex-row justify-center items-center gap-x-3 bg-gray-700 rounded-lg py-7 px-11">
+        <TouchableOpacity
+          className="flex flex-row justify-center items-center gap-x-3 bg-gray-700 rounded-lg py-7 px-11"
+          onPress={() => router.push("/mycomp/Match")}
+        >
           <Text className="text-white font-semibold text-xl">Match</Text>
           <Ionicons name="checkmark-circle" size={40} color="white" />
         </TouchableOpacity>
-        <TouchableOpacity className="flex flex-row justify-center items-center gap-x-3 bg-gray-700 rounded-lg py-7 px-9">
+        <TouchableOpacity
+          className="flex flex-row justify-center items-center gap-x-3 bg-gray-700 rounded-lg py-7 px-9"
+          onPress={() => router.push("/mycomp/Choose")}
+        >
           <Text className="text-white font-semibold text-xl">Choose</Text>
           <Ionicons name="list-sharp" size={40} color="white" />
         </TouchableOpacity>

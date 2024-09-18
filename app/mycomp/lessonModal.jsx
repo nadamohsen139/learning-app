@@ -44,10 +44,10 @@ const ModalScreen = ({ visible, onClose, item }) => {
               <Text className="text-gray-300">{item.desc}</Text>
             </View>
           </View>
-          <View className="flex flex-row gap-x-6 items-center justify-center">
+          <View className="flex flex-row gap-x-3 items-center justify-center">
             <View className="flex gap-y-3 items-center py-4 px-6 rounded-lg border border-gray-700">
-              <Ionicons name="document-text-outline" size={40} color="white" />
-              <Text className="text-white font-semibold">Read</Text>
+              <Ionicons name="list-sharp" size={40} color="white" />
+              <Text className="text-white font-semibold">Choose</Text>
             </View>
             <View className="flex gap-y-3 items-center py-4 px-6 rounded-lg border border-gray-700">
               <Ionicons name="language" size={40} color="white" />
