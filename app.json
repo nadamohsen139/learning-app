@@ -18,7 +18,8 @@
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/LanguApp_logo.png"
-      }
+      },
+      "package": "com.nadamohsen.learningapp"
     },
     "web": {
       "bundler": "metro",
@@ -30,6 +31,14 @@
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "d9ba4aff-461a-48c3-b615-ee58eb87d052"
+      }
     }
   }
 }
