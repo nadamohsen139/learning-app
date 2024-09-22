@@ -76,7 +76,7 @@ const Profile = () => {
               onValueChange={setSpeakingExercises}
             />
           </TouchableOpacity>
-          <TouchableOpacity className="flex flex-row justify-between items-center py-4">
+          <TouchableOpacity className="flex flex-row justify-between items-center pt-4">
             <Text className="text-gray-300 font-semibold">
               Listening Exercises
             </Text>
