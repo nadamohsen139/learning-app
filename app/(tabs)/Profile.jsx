@@ -1,11 +1,17 @@
-import { View, Text, ScrollView, TouchableOpacity } from "react-native";
-import React from "react";
+import { View, Text, ScrollView, TouchableOpacity, Switch } from "react-native";
+import React, { useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Ionicons } from "@expo/vector-icons";
 import { useRouter } from "expo-router";
 
 const Profile = () => {
   const router = useRouter();
+
+  const [soundEffects, setSoundEffects] = useState(false);
+  const [hapticFeedback, setHapticFeedback] = useState(true);
+  const [motivationalMessages, setMotivationalMessages] = useState(true);
+  const [speakingExercises, setSpeakingExercises] = useState(false);
+  const [listeningExercises, setListeningExercises] = useState(true);
 
   return (
     <SafeAreaView className="bg-black flex-1 p-5">
@@ -42,6 +48,47 @@ const Profile = () => {
 
         <Text className="text-white font-semibold text-xl">
           General Settings
+        </Text>
+        <View className="flex bg-gray-700 rounded-xl p-5 divide-y-2">
+          <TouchableOpacity className="flex flex-row justify-between items-center pb-4">
+            <Text className="text-gray-300 font-semibold">Sound Effects</Text>
+            <Switch value={soundEffects} onValueChange={setSoundEffects} />
+          </TouchableOpacity>
+          <TouchableOpacity className="flex flex-row justify-between items-center py-4">
+            <Text className="text-gray-300 font-semibold">Haptic feedback</Text>
+            <Switch value={hapticFeedback} onValueChange={setHapticFeedback} />
+          </TouchableOpacity>
+          <TouchableOpacity className="flex flex-row justify-between items-center py-4">
+            <Text className="text-gray-300 font-semibold">
+              Motivational messages
+            </Text>
+            <Switch
+              value={motivationalMessages}
+              onValueChange={setMotivationalMessages}
+            />
+          </TouchableOpacity>
+          <TouchableOpacity className="flex flex-row justify-between items-center py-4">
+            <Text className="text-gray-300 font-semibold">
+              Speaking Exercises
+            </Text>
+            <Switch
+              value={speakingExercises}
+              onValueChange={setSpeakingExercises}
+            />
+          </TouchableOpacity>
+          <TouchableOpacity className="flex flex-row justify-between items-center py-4">
+            <Text className="text-gray-300 font-semibold">
+              Listening Exercises
+            </Text>
+            <Switch
+              value={listeningExercises}
+              onValueChange={setListeningExercises}
+            />
+          </TouchableOpacity>
+        </View>
+
+        <Text className="text-white font-semibold text-xl">
+          Account Settings
         </Text>
         <View className="flex bg-gray-700 rounded-xl p-5 divide-y-2">
           <TouchableOpacity className="flex flex-row justify-between items-center pb-6">
