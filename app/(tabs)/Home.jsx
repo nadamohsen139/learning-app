@@ -32,7 +32,7 @@ const Home = () => {
             <CustomSelect />
             <Ionicons name="person-circle" size={48} color="white" />
           </View>
-          <Text className="text-white text-lg p-2">Hello Nada,</Text>
+          <Text className="text-white text-lg p-2">Welcome Nada,</Text>
           <Text className="text-white text-2xl p-2 font-semibold text-center">
             Continue Learning Turkish!
           </Text>
